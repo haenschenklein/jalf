@@ -3,46 +3,41 @@ package com.jalfsoftware.jalf.entities;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.jalfsoftware.jalf.helper.Map;
 import com.jalfsoftware.jalf.screens.GameScreen;
 
 /**
- * Erweitert AbstractEntity um Lebenspunkte, Beschleunigung, Maximalgeschwindigkeit, Bewegung (inklusive Kollisionsabfrage)
+ * Erweitert AbstractEntity um Lebenspunkte, Beschleunigung, Maximalgeschwindigkeit, Bewegung
  */
 public abstract class AbstractLivingEntity extends AbstractEntity {
     public static final String LOG = AbstractLivingEntity.class.getSimpleName();
 
     protected int currentHealth;
     protected int maxHealth;
-    protected int maxJumps = 2;
 
     protected float   acceleration;
     protected float   maxSpeed;
     protected float   jumpSpeed;
     protected Vector2 currentSpeed;
-    protected Boolean fireballAvalible;
 
     private int jumpCount;
 
     private Direction           requestedDirection;
-    protected Direction           lastXDirection;
     private LadderDirection     requestedLadderDirection;
     private Map.TilePhysicsType currentAppliedPhysics;
     private boolean             entityIsOnLadder;
     private boolean             entityIsMidAir;
 
-    public AbstractLivingEntity(float xPos, float yPos, String Regionname, int currentHealth, int maxHealth, float acceleration,
+    public AbstractLivingEntity(float xPos, float yPos, Texture texture, int currentHealth, int maxHealth, float acceleration,
                                 float maxSpeed, float jumpSpeed, GameScreen gameScreen) {
-        super(xPos, yPos, Regionname, gameScreen);
+        super(xPos, yPos, texture, gameScreen);
         this.maxHealth = maxHealth;
         this.currentHealth = currentHealth;
 
         this.acceleration = acceleration;
         this.maxSpeed = maxSpeed;
         this.jumpSpeed = jumpSpeed;
-        this.fireballAvalible = false;
 
         jumpCount = 0;
         currentSpeed = new Vector2(0, 0);
@@ -50,7 +45,6 @@ public abstract class AbstractLivingEntity extends AbstractEntity {
         entityIsMidAir = false;
 
         requestedDirection = Direction.NONE;
-        lastXDirection = Direction.NONE;
         requestedLadderDirection = LadderDirection.NONE;
         currentAppliedPhysics = Map.TilePhysicsType.NONE;
     }
@@ -64,14 +58,7 @@ public abstract class AbstractLivingEntity extends AbstractEntity {
         doCollisionDetectionHorizontal();
         doCollisionDetectionVertical();
         doOutOfMapDetectionBottom();
-        doItemDetection();
         updateLadderFlag();
-        updateLastXDirection();
-    }
-
-    private void updateLastXDirection() {
-        if (currentSpeed.x > 0) lastXDirection = Direction.RIGHT;
-        else if (currentSpeed.x < 0) lastXDirection = Direction.LEFT;
     }
 
     /**
@@ -276,74 +263,7 @@ public abstract class AbstractLivingEntity extends AbstractEntity {
         setY(getY() + currentSpeed.y);
     }
 
-
-    private void doItemDetection() {
-        //Rectangle player = new Rectangle();
-        float entityLeftBotX = gameScreen.getMap().convertToMapUnits(getX());
-        float entityLeftBotY = gameScreen.getMap().convertToMapUnits(getY());
-        float entityHeight = gameScreen.getMap().convertToMapUnits(getEntityHeight());
-        float entityWidth = gameScreen.getMap().convertToMapUnits(getEntityWidth());
-        String item = null;
-        Vector2 itemPosition = new Vector2();
-
-        for (float x = entityLeftBotX; x <= entityLeftBotX + entityWidth; x++) {
-            for (float y = entityLeftBotY; y <= entityLeftBotY + entityHeight; y++) {
-                if (gameScreen.getMap().isPositionItemPosition((int) x, (int) y) != null) {
-                    item = gameScreen.getMap().isPositionItemPosition((int) x, (int) y);
-                    itemPosition.set(x, y);
-                    break;
-                }
-                //System.out.println("coords: " + x + " " + y);
-            }
-        }
-
-
-        if (item != null) {
-            System.out.println("item detected! " + item.toString());
-            System.out.println("---");
-            // remove Tile
-            if (gameScreen.getMap().getForegroundLayerCell((int) itemPosition.x, (int) itemPosition.y) != null)
-                gameScreen.getMap().getForegroundLayerCell((int) itemPosition.x, (int) itemPosition.y).setTile(null);
-
-            switch (item) {
-                case "speed":
-                    itemSpeedBoost();
-                    break;
-                case "jump":
-                    itemJumpBoost();
-                    break;
-                case "fireball":
-                    itemSetFireballAvalible();
-                    break;
-                case "hp":
-                    itemHpPlus();
-                    break;
-                case "live":
-                    itemLivePlus();
-                    break;
-                case "coin":
-                    itemCoinPlus();
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-
-
-    protected abstract void itemCoinPlus();
-
-    protected abstract void itemSetFireballAvalible();
-
-	protected abstract void itemJumpBoost();
-
-	protected abstract void itemSpeedBoost();
-
-	protected abstract void itemLivePlus();
-
-    protected abstract void itemHpPlus();
-
-	public void takeDamage(int damage) {
+    public void takeDamage(int damage) {
         currentHealth -= damage;
     }
 
@@ -356,7 +276,7 @@ public abstract class AbstractLivingEntity extends AbstractEntity {
     }
 
     protected void jump() {
-        if (jumpCount < maxJumps) {
+        if (jumpCount < 2) {
             jumpCount++;
             currentSpeed.y = jumpSpeed;
         }
@@ -397,32 +317,8 @@ public abstract class AbstractLivingEntity extends AbstractEntity {
         return maxSpeed;
     }
 
-    public void setMaxSpeed(float maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
-
-    public float getMaxJumps() {
-        return maxJumps;
-    }
-
-    public void setMaxJumps(int maxJumps) {
-        this.maxJumps = maxJumps;
-    }
-
-    public float getJumpSpeed() {
-        return jumpSpeed;
-    }
-
-    public void setJumpSpeed(float jumpSpeed) {
-        this.jumpSpeed = jumpSpeed;
-    }
-
-    public Vector2 getCurrentSpeed() {
+    public Vector2 getcurrentSpeed() {
         return currentSpeed;
-    }
-
-    public Direction getRequestedDirection() {
-        return requestedDirection;
     }
 
     public static enum Direction {
@@ -435,9 +331,5 @@ public abstract class AbstractLivingEntity extends AbstractEntity {
         UP,
         DOWN,
         NONE
-    }
-
-    public Vector2 getPosition(){
-        return new Vector2(sprite.getX(), sprite.getY());
     }
 }

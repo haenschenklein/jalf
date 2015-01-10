@@ -32,7 +32,8 @@ public class MenuScreen extends AbstractScreen {
         table.add().padBottom(50).row();
 
         // Titel
-        Label titleLabel = new Label("tbn", skin, "magneto-92", Color.WHITE);
+        Label titleLabel = new Label("tbn", skin, "digital7-92", Color.WHITE);
+        //titleLabel.setFontScale(2);
         table.add(titleLabel).spaceBottom(5).align(1);
         table.row();
 
@@ -41,7 +42,7 @@ public class MenuScreen extends AbstractScreen {
         table.row();
 
         // Button "Start"
-        TextButton startGameButton = new TextButton("Start", skin);
+        TextButton startGameButton = new TextButton("START", skin);
         startGameButton.setColor(1, 1, 1, 0.9f);
         startGameButton.addListener(new DefaultActorListener() {
             @Override
@@ -54,7 +55,7 @@ public class MenuScreen extends AbstractScreen {
         table.row();
 
         // Button "Options"
-        TextButton optionsButton = new TextButton("Options", skin);
+        TextButton optionsButton = new TextButton("OPTIONS", skin);
         optionsButton.setColor(1, 1, 1, 0.9f);
         optionsButton.addListener(new DefaultActorListener() {
             @Override
@@ -67,7 +68,7 @@ public class MenuScreen extends AbstractScreen {
         table.row();
 
         // Button "Exit"
-        TextButton exitButton = new TextButton("Exit", skin);
+        TextButton exitButton = new TextButton("EXIT", skin);
         exitButton.setColor(1, 1, 1, 0.9f);
         exitButton.addListener(new DefaultActorListener() {
             @Override
