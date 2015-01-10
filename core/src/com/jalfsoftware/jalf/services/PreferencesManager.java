@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 
 /**
- * Created by Flaiker on 15.09.2014.
+ * Klasse zum Verwalten von Nutzereinstellungen
  */
 public class PreferencesManager {
     public static final String LOG = PreferencesManager.class.getSimpleName();

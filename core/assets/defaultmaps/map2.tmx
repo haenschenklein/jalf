@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="100" height="20" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
   <image source="tileset.png" width="256" height="256"/>
   <tile id="0">
@@ -35,6 +35,11 @@
     <property name="mapEnd" value=""/>
    </properties>
   </tile>
+  <tile id="2">
+   <properties>
+    <property name="enemySpawn" value=""/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="bgLayer" width="100" height="20">
   <data encoding="base64" compression="zlib">
@@ -51,9 +56,10 @@
    eJztwQEBAAAAgJD+r+4ICgAAAAAAAAAYH0AAAQ==
   </data>
  </layer>
- <objectgroup name="ojLayer" width="100" height="20">
+ <objectgroup name="ojLayer">
   <object gid="65" x="128" y="448"/>
   <object gid="66" x="704" y="512"/>
   <object gid="66" x="1632" y="320"/>
+  <object gid="67" x="384" y="499"/>
  </objectgroup>
 </map>

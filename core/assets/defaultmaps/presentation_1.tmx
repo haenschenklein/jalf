@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
+  <image source="tileset.png" width="256" height="256"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="ice" value=""/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="blocked" value=""/>
+    <property name="mud" value=""/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="ladder" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="65" name="ojTileset" tilewidth="32" tileheight="32">
+  <image source="ojTileset.png" width="256" height="256"/>
+  <tile id="0">
+   <properties>
+    <property name="playerSpawn" value=""/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="mapEnd" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="bgLayer" width="100" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzt0cEJACEMBMDg1/77vQ4OIq4ozGOeiWt2VNUImD86c7veTO1b3b2aY3cnqczd+53clfhL8o6nOurO3ZL79Q4AAAAAAAC4xwd37xJo
+  </data>
+ </layer>
+ <layer name="mgLayer" width="100" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztlkEKgCAQAAW7JF2q//81hAITq9U0lWZgoEPl4hxUKQAAgP4wu6vzDPVZaw8AJ+gBLTHVHuCHGIHwDXavR4G50Bn/ZXHvW8f9q1ekLUr20J6hd+6w++/O2WuPmBapPUL7Ktnrv/WIbeH3GITr0OOZlBajkp35/tkf880bU+ecM7lEejV7KQ++WAvp0Zv0aEt6tCU9yrsBO6AZ9g==
+  </data>
+ </layer>
+ <layer name="fgLayer" width="100" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgJD+r+4ICgAAAAAAAAAYH0AAAQ==
+  </data>
+ </layer>
+ <objectgroup name="ojLayer">
+  <object gid="65" x="96" y="448"/>
+  <object gid="66" x="3136" y="256"/>
+ </objectgroup>
+</map>

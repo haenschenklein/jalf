@@ -1,8 +1,8 @@
 {
-com.badlogic.gdx.graphics.g2d.BitmapFont: { default-font: { file: digital7.fnt } },
+com.badlogic.gdx.graphics.g2d.BitmapFont: { default-font: { file: Magneto.fnt } },
 com.badlogic.gdx.graphics.g2d.BitmapFont: { digital7-32: { file: digital7.fnt } },
 com.badlogic.gdx.graphics.g2d.BitmapFont: { digital7-64: { file: digital7-64.fnt } },
-com.badlogic.gdx.graphics.g2d.BitmapFont: { digital7-92: { file: digital7-92.fnt } },
+com.badlogic.gdx.graphics.g2d.BitmapFont: { magneto-92: { file: Magneto92_.fnt } },
 com.badlogic.gdx.graphics.g2d.BitmapFont: { digital7-128: { file: digital7-128.fnt } },
 com.badlogic.gdx.graphics.g2d.BitmapFont: { arial: { file: arial.fnt } },
 com.badlogic.gdx.graphics.Color: {

@@ -1,0 +1,237 @@
+
+blocks.png
+size: 512,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Trampolin
+  rotate: false
+  xy: 2, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+Trampolin_hoch
+  rotate: false
+  xy: 132, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+Trampolin_hoch
+  rotate: false
+  xy: 2, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+Trampolin_hoch
+  rotate: false
+  xy: 36, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+Trampolin_hoch
+  rotate: false
+  xy: 166, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+Trampolin_runter
+  rotate: false
+  xy: 36, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+Trampolin_runter
+  rotate: false
+  xy: 70, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+Trampolin_runter
+  rotate: false
+  xy: 200, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+Trampolin_runter
+  rotate: false
+  xy: 70, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+Trampolin_runter
+  rotate: false
+  xy: 104, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
+Wolke
+  rotate: false
+  xy: 234, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+Wolke
+  rotate: false
+  xy: 104, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+Wolke
+  rotate: false
+  xy: 138, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+Wolke
+  rotate: false
+  xy: 268, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+Wolke_gesamt
+  rotate: false
+  xy: 2, 70
+  size: 128, 32
+  orig: 128, 32
+  offset: 0, 0
+  index: -1
+blue
+  rotate: false
+  xy: 138, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+brown
+  rotate: false
+  xy: 172, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+desert1
+  rotate: false
+  xy: 302, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+dirtground1
+  rotate: false
+  xy: 172, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+dirtrocks
+  rotate: false
+  xy: 206, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+gras1
+  rotate: false
+  xy: 336, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+gras2
+  rotate: false
+  xy: 206, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+grasrocks
+  rotate: false
+  xy: 240, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+green
+  rotate: false
+  xy: 370, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+grey
+  rotate: false
+  xy: 240, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+groundrocks1
+  rotate: false
+  xy: 274, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+groundsand
+  rotate: false
+  xy: 404, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ladder1
+  rotate: false
+  xy: 274, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+ladder2
+  rotate: false
+  xy: 308, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+rocks1
+  rotate: false
+  xy: 438, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+snowground1
+  rotate: false
+  xy: 308, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+snowrocks1
+  rotate: false
+  xy: 342, 36
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 472, 70
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1

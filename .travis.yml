@@ -1,0 +1,18 @@
+language: java
+jdk:
+- oraclejdk8
+before_install:
+- chmod +x gradlew
+before_deploy:
+- ./gradlew desktop:dist
+- mv desktop/build/libs/desktop-1.0.jar desktop/build/libs/jalf-$TRAVIS_TAG.jar
+- git checkout gradlew
+deploy:
+  provider: releases
+  api_key:
+    secure: T8FO0ri3q3LSVAR99hKiBGPamF2Sj8Q1GoFnlSPm5GGON2cXMbJVGWOi7CHLhwJvPKw6m8EFY937wVvTc7I6SKO9ZWro8QBu5JIzd6nN5gpbk+bL80GwSBHcCvAa+gjYO9xZiXecWluha/O+DAYIjtFm6CSe6hAFMy17XlgGNJM=
+  file: desktop/build/libs/jalf-$TRAVIS_TAG.jar
+  on:
+    tags: true
+    repo: jalfsoftware/jalf
+    all_branches: true
